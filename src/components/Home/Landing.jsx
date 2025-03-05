@@ -38,36 +38,46 @@ function Landing() {
   };
 
   return (
-    <div className="relative h-[30vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Image Container */}
-      <img
-        src={images[currentIndex]}
-        alt="Insurance Slide"
-        className="absolute w-full h-full object-contain repeat-none transition-opacity duration-1000"
-      />
+    <div className="relative   md:h-screen w-full flex items-center justify-center overflow-hidden">
+      /* Image Container */
+      <div className="absolute w-full h-full overflow-hidden">
+        <div
+          className="flex transition-transform duration-1000"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Slide ${index}`}
+              className="w-full h-full object-cover flex-shrink-0"
+            />
+          ))}
+        </div>
+      </div>
 
       {/* Black Tint Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Navigation Arrows */}
       <button
-        onClick={prevSlide}
-        className="absolute left-5 top-1/2 transform -translate-y-1/2 bg-white/50 p-3 rounded-full text-blue-900 hover:bg-white transition z-10"
-      >
-        <FaChevronLeft size={24} />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-white/50 p-3 rounded-full text-blue-900 hover:bg-white transition z-10"
-      >
-        <FaChevronRight size={24} />
-      </button>
+  onClick={prevSlide}
+  className="absolute hidden md:block left-5 top-1/2 transform -translate-y-1/2 bg-white/50 p-3 rounded-full text-blue-900 hover:bg-white transition z-10"
+>
+  <FaChevronLeft size={24} />
+</button>
+<button
+  onClick={nextSlide}
+  className="absolute hidden md:block right-5 top-1/2 transform -translate-y-1/2 bg-white/50 p-3 rounded-full text-blue-900 hover:bg-white transition z-10"
+>
+  <FaChevronRight size={24} />
+</button>
 
       {/* Text Content */}
       <div className="absolute text-center z-10">
         <h4 className="subtitle text-white text-xl md:text-2xl font-bold">Welcome to</h4>
         <h1 className="title text-white text-4xl md:text-7xl font-bold my-2">
-          PolicyProvider
+          EasyPolicy.com
         </h1>
         <h2 className="subtitle text-lg md:text-2xl text-white font-semibold">
           "Ensuring a secure future, one policy at a time."
