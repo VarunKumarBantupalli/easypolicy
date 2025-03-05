@@ -28,6 +28,54 @@
     <!-- Preload Script for Performance -->
     <link rel="preload" as="script" href="/src/main.jsx" crossorigin="anonymous" />
 
+    <!-- Responsive Styling -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        color: #2c3e50;
+        margin-top: 20px;
+      }
+      h2 {
+        color: #4caf50;
+        margin-bottom: 10px;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        background-color: #4caf50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .cta-button:hover {
+        background-color: #388e3c;
+      }
+
+      /* Media Query for Smaller Screens */
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 24px;
+        }
+        h2 {
+          font-size: 18px;
+        }
+        .container {
+          padding: 10px;
+        }
+      }
+    </style>
+
     <!-- Structured Data (JSON-LD for Insurance Agency) -->
     <script type="application/ld+json">
     {
@@ -53,6 +101,13 @@
     </script>
   </head>
   <body>
+    <div class="container">
+      <h1>Find the Best Insurance Plans</h1>
+      <h2>Compare & Buy Online in Minutes</h2>
+      <p>Secure your future with the best health, life, car, and home insurance policies.</p>
+      <a href="https://www.example.com/plans" class="cta-button">View Plans</a>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
